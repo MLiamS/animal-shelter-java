@@ -1,4 +1,4 @@
-class public Animal {
+class Animal {
   public int mLegCount;
   public String mSpecies;
   public String mBreed;
