@@ -7,4 +7,8 @@ class Animal {
   public int mWeight;
   public int mHeight;
   public int mLength;
+
+  public boolean insidePet(int maxHeight) {
+    return (mHeight < maxHeight);
+  }
 }

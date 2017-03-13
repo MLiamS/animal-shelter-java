@@ -1,5 +1,8 @@
+import java.io.Console;
+
 public class App {
   public static void main(String[] args) {
+    Console myConsole = System.console();
 
     Animal dog = new Animal();
     dog.mLegCount = 3;
@@ -33,18 +36,24 @@ public class App {
 
     Animal[] allAnimals = {dog, cat, snake};
 
-    System.out.println("All animals");
+    System.out.println("How high are your ceilings?");
+    String stringMaxHeight = myConsole.readLine();
+    int maxHeight = Integer.parseInt(stringMaxHeight);
 
-    for ( Animal individualAnimal : allAnimals ) {
-      System.out.println( "----------------------" );
-      System.out.println( individualAnimal.mLegCount );
-      System.out.println( individualAnimal.mSpecies );
-      System.out.println( individualAnimal.mBreed );
-      System.out.println( individualAnimal.mName );
-      System.out.println( individualAnimal.mAge );
-      System.out.println( individualAnimal.mWeight );
-      System.out.println( individualAnimal.mHeight );
-      System.out.println( individualAnimal.mLength );
+    System.out.println("Alright, these pets will fit in your matchbox apartment:");
+
+      for ( Animal individualAnimal : allAnimals ) {
+        if (individualAnimal.insidePet(maxHeight)){
+        System.out.println( "----------------------" );
+        System.out.println( individualAnimal.mLegCount );
+        System.out.println( individualAnimal.mSpecies );
+        System.out.println( individualAnimal.mBreed );
+        System.out.println( individualAnimal.mName );
+        System.out.println( individualAnimal.mAge );
+        System.out.println( individualAnimal.mWeight );
+        System.out.println( individualAnimal.mHeight );
+        System.out.println( individualAnimal.mLength );
+      }
     }
   }
 }
