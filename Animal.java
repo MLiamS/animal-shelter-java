@@ -7,8 +7,9 @@ class Animal {
   public int mWeight;
   public int mHeight;
   public int mLength;
+  public boolean mAdopted;
 
-  public Animal(int legCount, String species, String breed, String name, int age, int weight, int height, int length) {
+  public Animal(int legCount, String species, String breed, String name, int age, int weight, int height, int length, boolean adopted) {
     mLegCount = legCount;
     mSpecies = species;
     mBreed = breed;
@@ -17,9 +18,14 @@ class Animal {
     mWeight = weight;
     mHeight = height;
     mLength = length;
+    mAdopted = adopted;
   }
 
   public boolean insidePet(int maxHeight) {
     return (mHeight < maxHeight);
+  }
+
+  public void setAdopted() {
+    mAdopted = true;
   }
 }
